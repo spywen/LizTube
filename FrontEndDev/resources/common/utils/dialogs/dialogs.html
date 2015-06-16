@@ -1,0 +1,22 @@
+<md-dialog aria-label="Copier ce lien pour le partager" md-theme="sub-bar" layout="row">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2><i class="fa fa-link"></i> Copier ce lien pour le partager</h2>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div>
+                <p style="margin: 20px;">{{urlForSharing}}</p>
+            </div>
+        </md-dialog-content>
+        <div class="md-actions" layout="row">
+            <md-button class="md-primary" ng-click="cancel()">
+                Annuler
+            </md-button>
+            <md-button class="md-primary" clip-copy="urlForSharing" clip-click="answer()">
+                Copier
+            </md-button>
+        </div>
+    </form>
+</md-dialog>

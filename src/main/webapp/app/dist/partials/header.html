@@ -1,0 +1,65 @@
+<!-- NavBar -->
+<div id="header">
+<nav>
+    <md-toolbar layout="row" layout-align="center center" md-theme="navbar" class="navbar">
+        <md-button href="/" aria-label>
+            <img src="app/dist/img/logo.png" class="logo"/>
+        </md-button>
+        <section flex layout="row" layout-align="center center">
+            <form data-ng-submit="search()" flex class="header-padding-input">
+                <md-input-container class="md-accent">
+                    <label><i class="fa fa-search"></i> Recherche</label>
+                    <input placeholder="Rechercher une vidéo" data-ng-model="query">
+                </md-input-container>
+            </form>
+            <md-button data-ng-click="toggleRight()" class="btn-size" aria-label>
+                <i class="fa fa-bars fa-font-size"></i>
+                <span data-ng-show="showNotification" class="notify">{{notification}}</span>
+            </md-button>
+            <span>
+                <is-connected type="forHeaderBar" id="isConnected"></is-connected>
+            </span>
+        </section>
+
+    </md-toolbar>
+    <div layout="column" layout-fill md-theme="sub-bar">
+        <section layout="row" flex>
+            <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+                <md-toolbar class="md-medium-tall" layout-align="center center">
+                    <is-connected type="forSideBar" id="isConnected"></is-connected>
+                </md-toolbar>
+                <md-content>
+                    <h3 class="menu-h3 margin-h3"><i class="fa fa-ellipsis-v"></i> Menu</h3>
+                </md-content>
+                <md-content flex layout="column" layout-align="start start">
+                    <md-button data-ng-href="/" data-ng-click="closeRightBar()" class="btn menu-btn"><i class="fa fa-home"></i> Accueil</md-button>
+                    <md-button data-ng-href="/upload" data-ng-click="closeRightBar()" class="btn menu-btn"><i class="fa fa-video-camera"></i> Uploader une vidéo</md-button>
+                    <md-button data-ng-href="/profil" data-ng-click="closeRightBar()" class="btn menu-btn"><i class="fa fa-user"></i> Mon profil</md-button>
+                </md-content>
+                <md-content flex layout="column" layout-align="start start">
+                    <h3 class="menu-h3"><i class="fa fa-bell-o"></i><span data-ng-show="showNotification" class="notify-side-bar">{{notification}}</span> Notifications</h3>
+                    <md-content data-ng-show="noNotification" class="md-padding"><i class="fa fa-bell-slash-o"></i> {{noNotification}}</md-content>
+                </md-content>
+                <md-content>
+                    <upload-video id="uploadVideo"></upload-video>
+                </md-content>
+            </md-sidenav>
+        </section>
+    </div>
+</nav>
+<!-- NavBar -->
+
+<!-- Breadcrumb -->
+<md-toolbar md-theme="sub-bar" layout="row" layout-align="start center" flex class="breadcrumb-bar">
+    <md-button href="/" class="margin-right"><i class="fa fa-home"></i> Accueil</md-button>
+    <span data-ng-if="page != 'Home'" layout="row" layout-align="start center" flex>
+        <div><i class="fa fa-chevron-right breadcrumb-cheveron"></i></div>
+        <h1 class="md-toolbar-tools"><span data-ng-bind="page"></span></h1>
+    </span>
+</md-toolbar>
+<!-- Breadcrumb -->
+
+<!-- ProgressBar -->
+<md-progress-linear data-ng-show="isLoading" class="md-warn" md-mode="indeterminate"></md-progress-linear>
+<!-- ProgressBar -->
+</div>

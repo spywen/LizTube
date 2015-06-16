@@ -1,0 +1,42 @@
+#upload{
+  .form-upload {
+    width: 45%;
+  }
+  .upload-bar {
+    margin-top: 10%;
+  }
+
+  .drop-box {
+    background: #F8F8F8;
+    border: 4px solid #DDD;
+    border-radius: 5px;
+    width: 100%;
+    height: 114px;
+    text-align: center;
+    padding-top: 25px;
+    float: left;
+    &.dragover {
+      border: 4px solid #12B44F;
+    }
+    &.dragover-err {
+      border: 4px solid red;
+    }
+  }
+  /*######### MEDIA QUERIES ##########*/
+  //phone
+  @media screen and (max-width: 767px) {
+    .form-upload {
+      width: 90%;
+    }
+  }
+  //tablet
+  @media screen and (min-width: 768px) and (max-width: 979px) {
+    .form-upload {
+      width: 90%;
+    }
+  }
+  //desktop
+  @media screen and (min-width: 979px) {
+
+  }
+}

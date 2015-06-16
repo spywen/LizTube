@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for modules/videos/watch/watch.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">modules/videos/watch/watch.js</span></h1>
+    <h2>
+        Statements: <span class="metric">55.17% <small>(32 / 58)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">50% <small>(9 / 18)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">42.11% <small>(8 / 19)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">55.17% <small>(32 / 58)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">modules/videos/watch/</a> &#187; watch.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Created by laurent on 16/04/15.
+ */
+angular.module('liztube.videos.watch',
+    [
+        "ngRoute",
+        "liztube.moastr",
+        "liztube.dataService.videosService",
+        "ngSanitize",
+        "com.2fdevs.videogular",//Video reader
+        "com.2fdevs.videogular.plugins.controls",//Controls
+        "com.2fdevs.videogular.plugins.overlayplay",//Big play button
+        "com.2fdevs.videogular.plugins.poster",//Thumbnail poster
+        "ngClipboard"
+    ]
+).config(function ($routeProvider){
+        $routeProvider.when("/watch/:videoKey",{
+            title: "LizTube - Vidéo",
+            page: "vidéo",
+            controller: 'watchCtrl',
+            templateUrl: "watch.html",
+            accessAnonymous : true
+        });
+&nbsp;
+}).config(['ngClipProvider', function(ngClipProvider) {
+        ngClipProvider.setPath("app/dist/libs/zeroclipboard/dist/ZeroClipboard.swf");
+}]).controller('watchCtrl', function ($sce,$rootScope, $scope, $routeParams, $route, moastr, videosService, constants,$location, $mdDialog) {
+    $scope.errorUpdate = '';
+    $scope.isEnableEditingVideo = false;
+&nbsp;
+    $scope.showLink = <span class="fstat-no" title="function not covered" >function(ev) {</span>
+<span class="cstat-no" title="statement not covered" >        $mdDialog.show({</span>
+            controller: DialogController,
+            templateUrl: 'dialogs.html',
+            parent: angular.element(document.body),
+            targetEvent: ev
+        }).then(<span class="fstat-no" title="function not covered" >function(answer) {</span>}, <span class="fstat-no" title="function not covered" >function() {</span>});
+    };
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function DialogController($scope, $mdDialog) {</span>
+<span class="cstat-no" title="statement not covered" >        $scope.urlForSharing = " " + $location.absUrl()+ " ";</span>
+<span class="cstat-no" title="statement not covered" >        $scope.hide = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >            $mdDialog.hide();</span>
+        };
+<span class="cstat-no" title="statement not covered" >        $scope.cancel = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >            $mdDialog.cancel();</span>
+        };
+<span class="cstat-no" title="statement not covered" >        $scope.answer = <span class="fstat-no" title="function not covered" >function(answer) {</span></span>
+<span class="cstat-no" title="statement not covered" >            $mdDialog.hide(answer);</span>
+<span class="cstat-no" title="statement not covered" >            moastr.successMin(constants.VIDEO_SHARE_URL_CLIPPED, 'top right');</span>
+        };
+    }
+&nbsp;
+    $scope.enableEditVideo = function(){
+        $scope.isEnableEditingVideo = true;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if($scope.videoDesc.public){
+<span class="cstat-no" title="statement not covered" >            $scope.videoDesc.confidentiality = 1;</span>
+        }else if(!$scope.videoDesc.public &amp;&amp; $scope.videoDesc.publicLink){
+            $scope.videoDesc.confidentiality = 2;
+        }else{
+            $scope.videoDesc.confidentiality = 0;
+        }
+    };
+&nbsp;
+    var videoOwnerTest= <span class="fstat-no" title="function not covered" >function (userName) {</span>
+<span class="cstat-no" title="statement not covered" >        if(window.user !== null){</span>
+<span class="cstat-no" title="statement not covered" >            if(userName == window.user.pseudo )</span>
+<span class="cstat-no" title="statement not covered" >                return true;</span>
+            else
+<span class="cstat-no" title="statement not covered" >                return false;</span>
+        }else{
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    };
+&nbsp;
+    var videoKey = $routeParams.videoKey;
+    /**
+     * Get video data
+     */
+    $scope.getVideoDesc = <span class="fstat-no" title="function not covered" >function(){</span>
+<span class="cstat-no" title="statement not covered" >        videosService.getVideoData(videoKey).then(<span class="fstat-no" title="function not covered" >function(video){</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $scope.videoDesc = video;</span>
+<span class="cstat-no" title="statement not covered" >            $scope.editVideo = videoOwnerTest(video.ownerPseudo);</span>
+<span class="cstat-no" title="statement not covered" >            $scope.config = {</span>
+                sources: [
+                    {src: $sce.trustAsResourceUrl("/api/video/watch/"+videoKey), type: "video/mp4"}
+                ],
+                theme: "/app/dist/libs/videogular-themes-default/videogular.css",
+                plugins: {
+                    poster: "/api/video/thumbnail/"+videoKey+"?width=1280&amp;height=720",
+                    controls: {
+                        autoHide: true,
+                        autoHideTime: 5000
+                    }
+                }
+            };
+&nbsp;
+        },<span class="fstat-no" title="function not covered" >function(responses){</span>
+<span class="cstat-no" title="statement not covered" >            if(responses.data.messages[0] === "#1101"){</span>
+<span class="cstat-no" title="statement not covered" >                moastr.error(constants.VIDEO_NOT_EXISTS, 'left right bottom');</span>
+<span class="cstat-no" title="statement not covered" >                $location.path('/');</span>
+            }else <span class="cstat-no" title="statement not covered" >if(responses.data.messages[0] === "#1100"){</span>
+<span class="cstat-no" title="statement not covered" >                moastr.error(constants.VIDEO_NOT_EXISTS, 'left right bottom');</span>
+<span class="cstat-no" title="statement not covered" >                $location.path('/');</span>
+            }else{
+<span class="cstat-no" title="statement not covered" >                moastr.error(constants.SERVER_ERROR, 'left right bottom');</span>
+            }
+        });
+    };
+&nbsp;
+&nbsp;
+    /**
+     * Update videoDesc
+     */
+    $scope.updateVideoDesc= function (){
+&nbsp;
+        $rootScope.$broadcast('loadingStatus', true);
+&nbsp;
+        //Intepret confidentiality
+        if($scope.videoDesc.confidentiality == 1){//Public
+            $scope.videoDesc.public = true;
+            $scope.videoDesc.publicLink = true;
+        }else if($scope.videoDesc.confidentiality == 2){//PublicLink
+            $scope.videoDesc.public = false;
+            $scope.videoDesc.publicLink = true;
+        }else{//Private
+            $scope.videoDesc.public = false;
+            $scope.videoDesc.publicLink = false;
+        }
+        delete $scope.videoDesc.confidentiality;
+&nbsp;
+        videosService.updateVideoData($scope.videoDesc).then(function () {
+            moastr.successMin(constants.UPDATE_VIDEO_DESCRIPTION_OK, 'top right');
+            $scope.isEnableEditingVideo = false;
+        }, function () {
+            moastr.error(constants.SERVER_ERROR, 'left right bottom');
+        }).finally(function () {
+            $rootScope.$broadcast('loadingStatus', false);
+        });
+&nbsp;
+&nbsp;
+    };
+&nbsp;
+});</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jun 13 2015 15:31:17 GMT+0200 (CEST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

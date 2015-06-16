@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for modules/videos/directive/videosDirective.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">modules/videos/directive/videosDirective.js</span></h1>
+    <h2>
+        Statements: <span class="metric">86.36% <small>(76 / 88)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">89.19% <small>(66 / 74)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">62.5% <small>(10 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">86.36% <small>(76 / 88)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">modules/videos/directive/</a> &#187; videosDirective.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">angular.module("liztube.videos",[
+    "liztube.dataService.videosService",
+    "liztube.moastr"
+]).controller("videosCtrl", function($scope, constants, videosService, moastr, $window) {
+    $scope.parameters = {};
+    $scope.flexSize = 20;
+    $scope.noVideoFound = "";
+    $scope.videos = [];
+    $scope.videosLoading = false;
+&nbsp;
+    /**
+     * Get flex size for display videos according to the screen size send as parameter
+     * @param size : screen size
+     */
+    $scope.getFlexSize = function (size) {
+        if(size &lt;= 500){
+            $scope.flexSize = 100;
+        }else if(size &gt;= 500 &amp;&amp; size &lt;= 800){
+            $scope.flexSize = 50;
+        }else if(size &gt;= 800 &amp;&amp; size &lt;= 1300){
+            $scope.flexSize = 33;
+        }else{
+            $scope.flexSize = 20;
+        }
+    };
+&nbsp;
+    $scope.getFlexSize($window.innerWidth);
+&nbsp;
+    /**
+     * Get params form directive to set all params, to use it in getVideos service
+     * @param getParams : get params
+     */
+    $scope.getParams = function(params) {
+        $scope.videosLoading = true;
+        if (!_.isUndefined(params.for) &amp;&amp; params.for === "user") {
+            $scope.showConfidentiality = true;
+        } else {
+            $scope.showConfidentiality = false;
+        }
+&nbsp;
+        if (!_.isUndefined(params.for) &amp;&amp; params.for === "home") {
+            $scope.showSelectVideos = true;
+        } else {
+            $scope.showSelectVideos = false;
+        }
+&nbsp;
+        if (!_.isUndefined(params.pageTitle) &amp;&amp; params.pageTitle !== "") {
+            $scope.pageTitle = params.pageTitle;
+        } else {
+            $scope.pageTitle = "Liztube vidéos";
+        }
+&nbsp;
+        if (!_.isUndefined(params.orderBy) &amp;&amp; params.orderBy !== "") {
+            $scope.orderBy = params.orderBy;
+        } else {
+            $scope.orderBy = "q";
+        }
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!_.isUndefined(params.page) &amp;&amp; params.page !== "") {
+            $scope.parameters.page = params.page;
+        }
+        if (!_.isUndefined(params.pagination) &amp;&amp; params.pagination !== "") {
+            $scope.parameters.pagination = params.pagination;
+        }
+        if (!_.isUndefined(params.user) &amp;&amp; params.user !== "") {
+            $scope.parameters.user = params.user;
+        }
+        if (!_.isUndefined(params.q) &amp;&amp; params.q !== "") {
+            $scope.parameters.q = $window.encodeURIComponent(params.q);
+        }
+        $scope.getVideos($scope.parameters);
+    };
+&nbsp;
+    /**
+     * Get videos form getVideos services to display videos in home page and myVideos
+     * @param getParams : get videos
+     */
+    $scope.getVideos = function(params) {
+        videosService.getVideos($scope.orderBy, params).then(function(data){
+            if(data.length === 0 &amp;&amp; (_.isUndefined(params.q) || params.q === "")){
+                $scope.noVideoFound = constants.NO_VIDEOS_FOUND;
+            }else if(data.length === 0 &amp;&amp; (!_.isUndefined(params.q) || <span class="branch-2 cbranch-no" title="branch not covered" >params.q !== "")</span>) {
+                $scope.noVideoFound = constants.NO_VIDEOS_FOUND + " pour la recherche '" + $window.decodeURIComponent(params.q) + "'";
+            }else{
+                $scope.videos = $scope.videos.concat(data);
+                $scope.loadPage = data.currentPage+ 1;
+                $scope.totalPage = data.totalPage;
+            }
+        },function(){
+            moastr.error(constants.SERVER_ERROR,'left right bottom');
+        }).finally(function(){
+            $scope.videosLoading = false;
+        });
+    };
+&nbsp;
+    /**
+     * Get videos form getVideos and filter them by mostrecent or mostviewed or mostshared
+     * @param getParams : filter videos
+     */
+    $scope.filter = function(orderBy){
+        if(orderBy === "1"){
+            $scope.orderBy = "q";
+            $scope.pageTitle = "Suggestions Liztube";
+        }else if(orderBy === "2"){
+            $scope.orderBy = "mostrecent";
+            $scope.pageTitle = "Vidéos les plus récentes";
+        }else if(orderBy === "3"){
+            $scope.orderBy = "mostviewed";
+            $scope.pageTitle = "Vidéos les plus vues";
+        }else <span class="missing-if-branch" title="else path not taken" >E</span>if(orderBy === "4"){
+            $scope.orderBy = "mostshared";
+            $scope.pageTitle = "Vidéos les plus partagées";
+        }
+        $scope.videos = [];
+        $scope.getParams({
+            pageTitle: $scope.pageTitle,
+            orderBy: $scope.orderBy,
+            page: 1,
+            pagination: $scope.pagination,
+            user: $scope.user,
+            q: $scope.q,
+            for: $scope.for
+        });
+    };
+&nbsp;
+}).directive('liztubeVideos', <span class="fstat-no" title="function not covered" >function ($window) {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+        restrict: 'E',
+        controller: 'videosCtrl',
+        templateUrl: "videosDirective.html",
+        replace: true,
+        scope: {
+            pageTitle:"@",
+            orderBy: "@",
+            page: "@",
+            pagination: "@",
+            user: "@",
+            q: "@",
+            for: "@"
+        },
+        link: <span class="fstat-no" title="function not covered" >function(scope, element, attrs) {</span>
+            //send all parms getted from directive to getParams method in controller
+<span class="cstat-no" title="statement not covered" >            scope.getParams({</span>
+                pageTitle: scope.pageTitle,
+                orderBy: scope.orderBy,
+                page: scope.page,
+                pagination: scope.pagination,
+                user: scope.user,
+                q: scope.q,
+                for: scope.for
+            });
+&nbsp;
+            //When window risized call getFlexSize method
+<span class="cstat-no" title="statement not covered" >            $window.addEventListener('resize', <span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >                scope.getFlexSize(element[0].offsetWidth);</span>
+<span class="cstat-no" title="statement not covered" >                scope.$apply();</span>
+            });
+        }
+    };
+}).filter('formatTime', function() {
+    //Convert milliseconds to time (hours:minutes:seconds)
+    return function(milliseconds) {
+        var seconds = parseInt((milliseconds/1000)%60);
+        var minutes = parseInt((milliseconds/(1000*60))%60);
+        var hours = parseInt((milliseconds/(1000*60*60))%24);
+        var out = "";
+&nbsp;
+        hours = (hours &lt; 10 &amp;&amp; hours &gt; 0) ? <span class="branch-0 cbranch-no" title="branch not covered" >"0" + hours </span>: hours;
+        minutes = (minutes &lt; 10) ? "0" + minutes : minutes;
+        seconds = (seconds &lt; 10) ? "0" + seconds : seconds;
+&nbsp;
+        if(hours === 0){
+            out = minutes + ":" + seconds;
+        }else{
+            out = hours + ":" + minutes + ":" + seconds;
+        }
+&nbsp;
+        return out;
+    };
+}).directive("infiniteScroll", <span class="fstat-no" title="function not covered" >function ($window) {</span>
+&nbsp;
+    //Call getVides method when scoll down is in bottom of page to create infinite scroll
+<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >function (scope, element, attrs) {</span></span>
+<span class="cstat-no" title="statement not covered" >        angular.element($window).bind("scroll", <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >            if ($window.document.body.scrollHeight === ($window.document.body.offsetHeight + $window.document.body.scrollTop)) {</span>
+<span class="cstat-no" title="statement not covered" >                if (scope.loadPage &lt;= scope.totalPage){</span>
+<span class="cstat-no" title="statement not covered" >                    scope.getParams({</span>
+                        pageTitle: scope.pageTitle,
+                        orderBy: scope.orderBy,
+                        page: scope.loadPage,
+                        pagination: scope.pagination,
+                        user: scope.user,
+                        q: scope.q,
+                        for: scope.for
+                    });
+<span class="cstat-no" title="statement not covered" >                    console.log("scope.loadPage " + scope.loadPage);</span>
+<span class="cstat-no" title="statement not covered" >                    console.log("scope.totalPage " + scope.totalPage);</span>
+                }
+            }
+        });
+    };
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jun 13 2015 15:31:17 GMT+0200 (CEST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

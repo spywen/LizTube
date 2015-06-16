@@ -1,0 +1,16 @@
+<div id="uploadVideo" data-ng-repeat="notification in notifications.infos">
+        <div data-ng-show="notification.uploadRate <= 99" class="download-not-end">
+            <h4><i class="fa fa-upload"></i> {{notification.fileName}}</h4>
+            <md-progress-linear class="md-primary margin-bottom" md-mode="determinate" value="{{notification.uploadRate}}"></md-progress-linear>
+            <md-button class="pull-right" data-ng-click="hideProgressBar($index)"><i class="fa fa-close"></i></md-button>
+            <div class="pull-left">{{notification.percent}}</div>
+        </div>
+        <div data-ng-show="notification.uploadRate == 100" class="download-end">
+            <a data-ng-href="/watch/{{notification.videoKey}}" data-ng-click="hideProgressBar($index)">
+                <md-button class="hideProgressBar" data-ng-click="hideProgressBar($index)"><i class="fa fa-close"></i></md-button>
+                <h4><i class="fa fa-check-circle"></i> {{notification.fileName}}</h4>
+                <img data-ng-src="/api/video/thumbnail/{{notification.videoKey}}?width=320&height=180" alt="" />
+            </a>
+        </div>
+        <div class="clear"></div>
+</div>

@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for modules/videos/upload/directive/uploadVideo.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">modules/videos/upload/directive/uploadVideo.js</span></h1>
+    <h2>
+        Statements: <span class="metric">80.77% <small>(21 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(2 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">62.5% <small>(5 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">80.77% <small>(21 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">modules/videos/upload/directive/</a> &#187; uploadVideo.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">angular.module("liztube.upload.video",[
+    "liztube.moastr",
+    "ngRoute",
+    "liztube.upload.video.page",
+    'angularFileUpload' //https://github.com/danialfarid/angular-file-upload
+]).controller("uploadVideoCtrl", function($scope, $http, $upload, constants, moastr, $mdSidenav, $location) {
+    $scope.uploadRate = 0;
+    $scope.id = 0;
+    $scope.notifications = {
+        "infos": []
+    };
+    /**
+     * Catch upload video event to upload a video
+     */
+&nbsp;
+    $scope.$on('loadingUploadVideoForHeader', function(event, video) {
+        $mdSidenav('right').toggle();
+        $scope.id = $scope.id+1;
+        $scope.$emit('addNotification', true);
+        $scope.notifications.infos.push({
+            id: $scope.id,
+            fileName : constants.DOWNLOAD_ON_AIR_FILE_NAME + video.title,
+            uploadRate : 0,
+            percent : "0%",
+            videoKey: ""
+        });
+&nbsp;
+        $upload.upload({
+            url: '/api/video/upload',
+            fields: {
+                title: video.title,
+                description: video.description,
+                isPublic: video.isPublic,
+                isPublicLink: video.isPublicLink
+            },
+            file: video.file
+        }).progress(<span class="fstat-no" title="function not covered" >function (evt) {</span>
+<span class="cstat-no" title="statement not covered" >            $scope.addVideoAsNotifications({</span>
+                id: $scope.id,
+                fileName : constants.DOWNLOAD_ON_AIR_FILE_NAME + video.title,
+                uploadRate : parseInt(99.0 * evt.loaded / evt.total),
+                percent : parseInt(99.0 * evt.loaded / evt.total) + "%",
+                videoKey: ""
+            });
+        }).success(<span class="fstat-no" title="function not covered" >function (data, status, headers, config) {</span>
+<span class="cstat-no" title="statement not covered" >            $scope.addVideoAsNotifications({</span>
+                id: $scope.id,
+                fileName : constants.UPLOAD_DONE + video.title,
+                uploadRate : 100,
+                percent : "100%",
+                videoKey: data
+            });
+<span class="cstat-no" title="statement not covered" >            moastr.successMin(constants.UPLOAD_DONE, 'top right');</span>
+<span class="cstat-no" title="statement not covered" >            $location.path("/profil");</span>
+        }).error(<span class="fstat-no" title="function not covered" >function (data, status, headers, config){</span>
+<span class="cstat-no" title="statement not covered" >            moastr.error(constants.SERVER_ERROR, 'left right bottom');</span>
+        });
+    });
+&nbsp;
+    $scope.addVideoAsNotifications = function(video){
+        for (var j = 0; j &lt; $scope.notifications.infos.length; j++) {
+            if (angular.equals($scope.notifications.infos[j].id,video.id)) {
+                $scope.notifications.infos[j].fileName = video.fileName;
+                $scope.notifications.infos[j].uploadRate = video.uploadRate;
+                $scope.notifications.infos[j].percent = video.percent;
+                $scope.notifications.infos[j].videoKey = video.videoKey;
+            }
+        }
+    };
+&nbsp;
+    /**
+     * Close upload progress bar
+     */
+    $scope.hideProgressBar = function(index){
+        $scope.notifications.infos.splice(index, 1);
+        $scope.$emit('removeNotification', true);
+    };
+&nbsp;
+}).directive('uploadVideo', function () {
+    return {
+        restrict: 'E',
+        controller: 'uploadVideoCtrl',
+        templateUrl: "uploadVideo.html",
+        scope: {
+            type: "@"
+        }
+    };
+});</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jun 13 2015 15:31:17 GMT+0200 (CEST)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

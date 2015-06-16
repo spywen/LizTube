@@ -1,0 +1,78 @@
+<div id="profile" ng-init="getUserProfile()">
+    <div layout="column" layout-align="center center" class="profile">
+        <h1 class="pageTitle">
+            <span><img src="app/dist/img/favicon.png" width="27px"> {{profilTitle}}</span>
+            <md-button type="submit" ng-click="showAdvanced($event)" class="md-raised md-warn delete-account margin-right" >
+                <i class="fa fa-trash-o"></i> Supprimer mon compte
+            </md-button>
+        </h1>
+        <form class="form-profile" name="formupdate-profile">
+            <div class="profile-content" ng-init="isDisable= true" >
+                <div layout layout-sm="column">
+                    <div flex="20">
+                        <a href="https://fr.gravatar.com/" target="_blank">
+                            <gravatar-image gravatar-email="user.email" gravatar-size="150" gravatar-default="mm"></gravatar-image>
+                        </a>
+                    </div>
+                    <div flex="80">
+                        <md-content layout-padding layout="row" layout-sm="column">
+                            <md-input-container flex>
+                                <label><i class="fa fa-user"></i> Nom</label>
+                                <input type="text" name="firstname" ng-model="user.firstname" ng-minlength="1" ng-maxlength="100" ng-disabled="isDisable" required/>
+                                <div ng-messages="formupdate-profile.firstname.$error">
+                                    <div ng-message="required">Le nom est requis</div>
+                                    <div ng-message="minlength">Le nom est trop court</div>
+                                    <div ng-message="maxlength">Le nom est trop long</div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container flex>
+                                <label><i class="fa fa-user"></i> Prénom</label>
+                                <input type="text" name="lastname"  ng-model="user.lastname" ng-minlength="1" ng-maxlength="100" ng-disabled="isDisable" required/>
+                                <div ng-messages="formupdate-profile.lastname.$error">
+                                    <div ng-message="required">Le prénom est requis</div>
+                                    <div ng-message="minlength">Le prénom est trop court</div>
+                                    <div ng-message="maxlength">Le prénom est trop long</div>
+                                </div>
+                            </md-input-container>
+                        </md-content>
+                        <md-content layout-padding layout="row" layout-sm="column">
+                            <md-input-container flex>
+                                <label><i class="fa fa-envelope"></i> Email</label>
+                                <input type="email" name="email" ng-model="user.email" required email-validation ng-disabled="isDisable" ng-model-options="{ updateOn: 'blur' }"/>
+                                <div ng-messages="formupdate-profile.email.$error">
+                                    <div ng-message="required">L'email est requis</div>
+                                    <div ng-message="emailValidation">Email déjà utilisé</div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container flex>
+                                <label><i class="fa fa-calendar"></i> Date de naissance</label>
+                                <input type="date" name="date_naissance" ng-model="user.birthdate" ng-disabled="isDisable"  date-to-timestamp>
+                            </md-input-container>
+                        </md-content>
+                    </div>
+                </div>
+            </div>
+            <div layout="row" layout-align="end center" class="profile-footer" >
+                <md-button ng-href="/majmotdepasse" class="md-accent md-raised margin-right" >
+                    <i class="fa fa-check"></i> Mettre à jour le mot de passe
+                </md-button>
+                <div ng-switch="isDisable">
+                    <div ng-switch-when="true">
+                        <md-button type="submit" ng-click="enableUpdateProfil()" class="md-accent md-raised margin-right"  >
+                            <i class="fa fa-check"></i> Mettre à jour le profil
+                        </md-button>
+                    </div>
+                    <div ng-switch-when="false">
+                        <md-button type="submit" ng-click="update()" class="md-accent md-raised margin-right" >
+                            <i class="fa fa-check"></i> Mise à jour
+                        </md-button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div id="myVideos">
+        <liztube-videos page-title="{{pageTitle}}" order-by="{{orderBy}}" page="{{page}}" pagination="{{pagination}}" user="{{userId}}" q="{{q}}" for="{{for}}"></liztube-videos>
+    </div>
+</div>

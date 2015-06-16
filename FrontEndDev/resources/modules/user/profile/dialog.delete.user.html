@@ -1,0 +1,33 @@
+<md-dialog aria-label="Supression de compte" class="delete-account-dialog">
+    <form class="form-daleteAccount" name="formDeleteAccount">
+        <md-toolbar class="md-accent">
+            <div class="md-toolbar-tools" >
+                <h2>Suppression du compte</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="hide()">
+                    <i class="fa fa-times"></i>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="content-delete-user">
+                <h3>
+                    Pour supprimer votre compte veuillez rentrer votre mot de passe.
+                </h3>
+                <em>Attention la suppression de votre compte entraînera l'effacement définitif de toutes<br/> les données relatives à votre compte (incluant vos vidéos).</em>
+                <md-input-container flex>
+                    <label><i class="fa fa-lock"></i> Mot de passe</label>
+                    <input type="password" name="password" ng-model="password.password" required>
+                    <div ng-messages="formRegister.password.$error">
+                        <div ng-message="required">Mot de passe requis</div>
+                    </div>
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+        <div class="md-actions" layout="row">
+            <md-button ng-click="answer()" class="md-primary" ng-disabled="formDeleteAccount.$invalid">
+                Valider
+            </md-button>
+        </div>
+    </form>
+</md-dialog>

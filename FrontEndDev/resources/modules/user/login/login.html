@@ -1,0 +1,33 @@
+<div id="login">
+<div>
+    <div layout="column" layout-align="center center" class="login">
+        <form class="form-login" ng-submit="submit()"  name="formLogin">
+            <md-toolbar class="login-bar md-accent">
+                <h2 class="md-toolbar-tools">
+                    <span><img src="app/dist/img/favicon.png" width="27px"> Connexion</span>
+                </h2>
+            </md-toolbar>
+            <div class="login-content">
+                <md-input-container>
+                    <label><i class="fa fa-user"></i> Email ou Pseudo</label>
+                    <input type="text" name="username" required ng-model="login"/>
+                    <div ng-messages="formLogin.username.$error">
+                        <div ng-message="required">L'email ou le pseudo est requis</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label><i class="fa fa-lock"></i> Mot de passe</label>
+                    <input type="password" name="password" required ng-model="password">
+                    <div ng-messages="formLogin.password.$error">
+                        <div ng-message="required">Le mot de passe est requis</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div layout="row" layout-align="end center" class="login-footer">
+                <md-button type="submit" class="md-accent md-raised margin-right" ng-disabled="formLogin.$invalid"><i class="fa fa-check"></i> Connexion</md-button>
+                <md-button href="/register" class="md-warn md-primary"><i class="fa fa-sign-in"></i> Inscription</md-button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>

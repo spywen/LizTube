@@ -1,0 +1,60 @@
+<div id="update-profile" data-ng-init="getUserProfile()">
+    <div layout="column" layout-align="center center" class="update-profile">
+        <form class="form-update-profile" name="formupdate-profile">
+            <md-toolbar class="update-profile-bar md-accent">
+                <h2 class="md-toolbar-tools">
+                    <span><img src="app/dist/img/favicon.png" width="27px"> Mise à jour du profil</span>
+                </h2>
+            </md-toolbar>
+            <div class="update-profile-content" >
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        <label><i class="fa fa-user"></i> Nom</label>
+                        <input type="text" name="firstname" data-ng-model="user.firstname" data-ng-minlength="1" data-ng-maxlength="100" required/>
+                        <div data-ng-messages="formupdate-profile.firstname.$error">
+                            <div data-ng-message="required">Le nom est requis</div>
+                            <div data-ng-message="minlength">Le nom est trop court</div>
+                            <div data-ng-message="maxlength">Le nom est trop long</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label><i class="fa fa-user"></i> Prénom</label>
+                        <input type="text" name="lastname"  data-ng-model="user.lastname" data-ng-minlength="1" data-ng-maxlength="100" required/>
+                        <div data-ng-messages="formupdate-profile.lastname.$error">
+                            <div data-ng-message="required">Le prénom est requis</div>
+                            <div data-ng-message="minlength">Le prénom est trop court</div>
+                            <div data-ng-message="maxlength">Le prénom est trop long</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        <label><i class="fa fa-envelope"></i> Email</label>
+                        <input type="email" name="email" data-ng-model="user.email" required email-validation data-ng-model-options="{ updateOn: 'blur' }"/>
+                        <div data-ng-messages="formupdate-profile.email.$error">
+                            <div data-ng-message="required">L'email est requis</div>
+                            <div data-ng-message="emailValidation">Email déjà utilisé</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label><i class="fa fa-calendar"></i> Date de naissance</label>
+                        <input type="date" name="date_naissance" data-ng-model="user.birthdate"  date-to-timestamp>
+                    </md-input-container>
+                </div>
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        Sexe
+                        <md-radio-group data-ng-model="user.isfemale" required>
+                            <md-radio-button data-ng-value="true"><i class="fa fa-female"></i> Femme</md-radio-button>
+                            <md-radio-button data-ng-value="false"><i class="fa fa-male"></i>  Homme </md-radio-button>
+                        </md-radio-group>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row" layout-align="end center" class="update-profile-footer">
+                <md-button type="submit" data-ng-click="update()" class="md-accent md-raised margin-right" data-ng-disabled="formupdate-profile.$invalid"><i class="fa fa-check"></i> Mise à jour</md-button>
+            </div>
+        </form>
+    </div>
+
+</div>

@@ -1,0 +1,59 @@
+<div id="upload">
+    <div>
+        <div layout="column" layout-align="center center" class="login">
+            <form class="form-upload" name="formUpload">
+                <md-toolbar class="upload-bar md-accent">
+                    <h2 class="md-toolbar-tools">
+                        <span><img src="app/dist/img/favicon.png" width="27px"> Uploader une vidéo</span>
+                    </h2>
+                </md-toolbar>
+                <div>
+                    <md-input-container>
+                        <label><i class="fa fa-video-camera"></i> Titre</label>
+                        <input type="text" name="title" required="required" md-maxlength="300" data-ng-model="video.title"/>
+                        <div data-ng-messages="formUpload.title.$error">
+                            <div data-ng-message="required">Le titre est requis</div>
+                            <div data-ng-message="md-maxlength">Le titre ne doit pas dépasser 300 caractères</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container>
+                        <label><i class="fa fa-newspaper-o"></i> Description</label>
+                        <textarea data-ng-model="video.description" name="description" required="required" columns="1" md-maxlength="1000"></textarea>
+                        <div data-ng-messages="formUpload.description.$error">
+                            <div data-ng-message="required">La description est requise</div>
+                            <div data-ng-message="md-maxlength">La description ne doit pas dépasser 1000 caractères</div>
+                        </div>
+                    </md-input-container>
+                    <div layout="column" layout-align="center center">
+                        <h4 class="no-margin">Sélectionner le niveau de confidentialité :</h4>
+                        <md-radio-group class="no-margin md-primary" name="confidentiality" data-ng-model="video.confidentiality" required="required" aria-label="confidentiality"  layout="row" layout-align="center center">
+                            <md-radio-button value="1">Publique</md-radio-button>
+                            <md-radio-button value="0">Privé</md-radio-button>
+                            <md-radio-button value="2">
+                                Disponible uniquement par lien
+                                <md-tooltip>
+                                    Seules les personnes disposant<br/>du lien de la vidéo pourront<br/> y accèder. Option modifiable<br/> une fois la vidéo uploadée.
+                                </md-tooltip>
+                            </md-radio-button>
+                        </md-radio-group>
+                        <div data-ng-messages="formUpload.confidentiality.$error">
+                            <div data-ng-message="required">Le niveau de confidentialité est requis</div>
+                        </div>
+                    </div>
+                    <h4>Sélectionner une vidéo ou glisser/déposer :</h4>
+                    <md-input-container md-theme="sub-bar" >
+                        <md-button class="md-primary md-raised" name="file"  aria-label="uploadVideo" data-ng-model-rejected="rejFiles" data-ng-file-select data-ng-model="video.files" data-ng-multiple="false"><i class="fa fa-video-camera"></i> Sélectionner une vidéo</md-button>
+                    </md-input-container>
+                    <span data-ng-if="fileName != ''" class="bold"><i class="fa fa-file-video-o"></i> Vidéo sélectionnée : {{fileName}}</span>
+                    <md-input-container>
+                        <div data-ng-file-drop class="drop-box" name="file" data-ng-multiple="false" allow-dir="true" data-ng-model-rejected="rejFiles" data-ng-model="video.files">Glisser/déposer la vidéo ici</div>
+                        <div data-ng-no-file-drop>Le glisser/déposer n'est pas supporté par votre naviguateur.</div>
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-align="end center" class="login-footer">
+                    <md-button type="submit" data-ng-click="submit()" class="md-accent md-raised margin-right" data-ng-disabled="formUpload.$invalid"><i class="fa fa-check"></i> Uploader</md-button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

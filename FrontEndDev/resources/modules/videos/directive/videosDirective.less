@@ -1,0 +1,114 @@
+#liztubeVideos{
+  .pageTitle{
+    border-bottom: 2px solid #1976D2;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #F3F3F3;
+    font-size: 21px;
+    padding: 10px;
+    .filter{
+      display: inline;
+      float: right;
+      md-select{
+        margin: 0;
+      }
+    }
+  }
+  .videosList{
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    cursor: pointer;
+    outline: none;
+    .videos{
+      position: relative;
+      padding: 6px;
+      a{
+        text-decoration: none;
+        color: #555;
+        outline: none;
+      }
+    }
+    .thumb{
+      position: relative;
+      with:100%;
+      outline: none;
+      img{
+        position: relative;
+        width: 100%;
+        min-height: 143px;
+        background-color: #999;
+      }
+      .confidentiality{
+        position: absolute;
+        color: #f9f9f9;
+        background-color: #333;
+        opacity: 0.8;
+        left: 8px;
+        bottom: 22px;
+        border-radius: 100%;
+        width: 18px;
+        padding-top: 0px;
+        height: 19px;
+        text-align: center;
+        .public{
+          color: #99CC00;
+        }
+        .private{
+          color: #CC0000;
+        }
+        .link{
+          color: #0099CC;
+        }
+      }
+      .time{
+        position: absolute;
+        bottom: 12px;
+        right: 5px;
+        color: #f9f9f9;
+        background-color: #333;
+        opacity: 0.8;
+      }
+    }
+    h2{
+      position: relative;
+      width: 100%;
+      color: #167ac6;
+      padding: 0;
+      margin: 0;
+      font-size: 19px;
+    }
+    p{
+      position: relative;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      line-height: 9px;
+      font-size: 14px;
+    }
+    .view{
+      font-size: 13px;
+      font-weight: 600;
+    }
+  }
+  .videos-loading{
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 515px) {
+  #liztubeVideos{
+    .pageTitle {
+      .filter {
+        display: block;
+        float: none;
+        md-select {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}

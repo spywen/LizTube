@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+
+    <USER ID="1" PSEUDO="spywen" EMAIL="spywen@hotmail.fr" FIRSTNAME="Laurent" LASTNAME="Babin" ISACTIVE="true" ISFEMALE="false" MODIFICATIONDATE="2013-10-05 10:15:26" PASSWORD="e73b79a0b10f8cdb6ac7dbe4c0a5e25776e1148784b86cf98f7d6719d472af69" REGISTERDATE="2013-10-05 10:15:26" BIRTHDATE="2013-10-05 10:15:26"/>
+    <USER ID="2" PSEUDO="kmille" EMAIL="kmille@hotmail.fr" FIRSTNAME="Camille" LASTNAME="Fontaine" ISACTIVE="true" ISFEMALE="true" MODIFICATIONDATE="2013-10-05 10:15:26" PASSWORD="e73b79a0b10f8cdb6ac7dbe4c0a5e25776e1148784b86cf98f7d6719d472af69" REGISTERDATE="2013-10-05 10:15:26" BIRTHDATE="2013-10-05 10:15:26"/>
+    <USER ID="3" PSEUDO="test" EMAIL="test@hotmail.fr" FIRSTNAME="Test" LASTNAME="Test" ISACTIVE="true" ISFEMALE="false" MODIFICATIONDATE="2013-10-05 10:15:26" PASSWORD="e73b79a0b10f8cdb6ac7dbe4c0a5e25776e1148784b86cf98f7d6719d472af69" REGISTERDATE="2013-10-05 10:15:26" BIRTHDATE="2013-10-05 10:15:26"/>
+
+    <ROLE id="1" NAME="AUTHENTICATED" />
+    <ROLE id="2" NAME="ADMIN" />
+    <ROLE id="3" NAME="USER" />
+
+    <USER_ROLE USER_ID="1" ROLE_ID="1"/>
+    <USER_ROLE USER_ID="1" ROLE_ID="2"/>
+    <USER_ROLE USER_ID="2" ROLE_ID="1"/>
+    <USER_ROLE USER_ID="2" ROLE_ID="3"/>
+    <USER_ROLE USER_ID="3" ROLE_ID="1"/>
+    <USER_ROLE USER_ID="3" ROLE_ID="3"/>
+
+    <VIDEO keyid="a" description="desc of a" ispublic="true" creationdate="2013-10-05 10:15:26" ispubliclink="true" title="A video" user="1" VIDEORANKASMOSTRECENT="5" VIDEORANKASMOSTVIEWED="11" VIDEORANKASMOSTSHARED="11" DURATION="0"/>
+    <VIDEO keyid="b" description="desc of b" ispublic="true" creationdate="2013-10-06 10:15:26" ispubliclink="true" title="B video" user="2" VIDEORANKASMOSTRECENT="2" VIDEORANKASMOSTVIEWED="2" VIDEORANKASMOSTSHARED="7" DURATION="0"/>
+    <VIDEO keyid="c" description="desc of c" ispublic="true" creationdate="2013-10-07 10:15:26" ispubliclink="true" title="C video" user="2" VIDEORANKASMOSTRECENT="3" VIDEORANKASMOSTVIEWED="3" VIDEORANKASMOSTSHARED="2" DURATION="0"/>
+    <VIDEO keyid="d" description="desc of d" ispublic="true" creationdate="2013-10-08 10:15:26" ispubliclink="true" title="D video" user="1" VIDEORANKASMOSTRECENT="4" VIDEORANKASMOSTVIEWED="4" VIDEORANKASMOSTSHARED="3" DURATION="0"/>
+    <VIDEO keyid="e" description="desc of e" ispublic="true" creationdate="2013-10-09 10:15:26" ispubliclink="true" title="E video" user="1" VIDEORANKASMOSTRECENT="1" VIDEORANKASMOSTVIEWED="5" VIDEORANKASMOSTSHARED="4" DURATION="0"/>
+    <VIDEO keyid="f" description="desc of f" ispublic="true" creationdate="2013-10-10 10:15:26" ispubliclink="true" title="F video" user="2" VIDEORANKASMOSTRECENT="6" VIDEORANKASMOSTVIEWED="1" VIDEORANKASMOSTSHARED="5" DURATION="0"/>
+    <VIDEO keyid="g" description="desc of g" ispublic="true" creationdate="2013-10-11 10:15:26" ispubliclink="true" title="G video" user="2" VIDEORANKASMOSTRECENT="7" VIDEORANKASMOSTVIEWED="7" VIDEORANKASMOSTSHARED="6" DURATION="0"/>
+    <VIDEO keyid="h" description="desc of h" ispublic="true" creationdate="2013-10-12 10:15:26" ispubliclink="true" title="H video" user="1" VIDEORANKASMOSTRECENT="8" VIDEORANKASMOSTVIEWED="8" VIDEORANKASMOSTSHARED="1" DURATION="0"/>
+    <VIDEO keyid="i" description="desc of i" ispublic="true" creationdate="2013-10-13 10:15:26" ispubliclink="true" title="I video" user="1" VIDEORANKASMOSTRECENT="9" VIDEORANKASMOSTVIEWED="9" VIDEORANKASMOSTSHARED="8" DURATION="0"/>
+    <VIDEO keyid="j" description="desc of j" ispublic="true" creationdate="2013-10-15 10:15:26" ispubliclink="true" title="J video" user="1" VIDEORANKASMOSTRECENT="10" VIDEORANKASMOSTVIEWED="10" VIDEORANKASMOSTSHARED="9" DURATION="0"/>
+    <VIDEO keyid="k" description="desc of k" ispublic="true" creationdate="2013-10-15 10:15:27" ispubliclink="true" title="K video" user="1" VIDEORANKASMOSTRECENT="11" VIDEORANKASMOSTVIEWED="6" VIDEORANKASMOSTSHARED="10" DURATION="0"/>
+
+    <VIEW id="1" viewdate="2013-10-12 10:15:26" user="2" video="a" asshared="false" />
+    <VIEW id="2" viewdate="2013-10-12 10:50:26" user="2" video="a" asshared="true" />
+    <VIEW id="3" viewdate="2013-10-12 10:50:26" user="2" video="a" asshared="false" />
+    <VIEW id="4" viewdate="2013-10-12 10:15:26" user="2" video="b" asshared="true" />
+    <VIEW id="5" viewdate="2013-10-12 10:50:26" user="2" video="b" asshared="true" />
+    <VIEW id="6" viewdate="2013-10-12 10:50:26" user="2" video="c" asshared="true" />
+
+</dataset>

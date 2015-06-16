@@ -1,0 +1,55 @@
+<div id="liztubeVideos" on-size-changed>
+    <h1 class="pageTitle" data-ng-if="pageTitle"><i class="fa fa-video-camera"></i> {{pageTitle}}
+        <div class="filter" data-ng-show="showSelectVideos">
+            <md-select placeholder="Suggestions Liztube" data-ng-model="filterOrderBy" data-ng-change="filter(filterOrderBy)">
+                <md-option value="1">Suggestions Liztube</md-option>
+                <md-option value="2">Les plus récentes</md-option>
+                <md-option value="3">Les plus vues</md-option>
+                <md-option value="4">Les plus partagées</md-option>
+            </md-select>
+        </div>
+    </h1>
+    <h3 class="text-center" data-ng-if="noVideoFound"><i class="fa fa-video-camera"></i> {{noVideoFound}}</h3>
+    <md-content layout="row" layout-wrap class="videosList" infinite-scroll>
+        <div flex="{{flexSize}}" data-ng-repeat="video in videos" class="videos">
+            <a href="/watch/{{video.key}}">
+                <div class="thumb">
+                    <md-tooltip data-ng-if="video.public && showConfidentiality">
+                        La vidéo est publique.
+                    </md-tooltip>
+                    <md-tooltip data-ng-if="!video.public && video.publicLink && showConfidentiality">
+                        La vidéo est disponible<br/> uniquement par lien.
+                    </md-tooltip>
+                    <md-tooltip data-ng-if="!video.public && !video.publicLink && showConfidentiality">
+                        La vidéo est privée.
+                    </md-tooltip>
+                    <img data-ng-src="/api/video/thumbnail/{{video.key}}?width=640&height=360" alt="" />
+                    <div class="time">{{video.duration | formatTime}}</div>
+                    <div class="confidentiality" data-ng-show="showConfidentiality">
+                        <span data-ng-show="video.public" class="public">
+                            <i class="fa fa-check-circle"></i>
+                        </span>
+                        <span data-ng-if="!video.public && video.publicLink" class="link">
+                            <i class="fa fa-link"></i>
+                        </span>
+                        <span data-ng-if="!video.public && !video.publicLink" class="private">
+                            <i class="fa fa-minus-circle"></i>
+                        </span>
+                    </div>
+                </div>
+                <h2>
+                    {{video.title | limitTo:29}}
+                    <span data-ng-if="video.title.length > 29">...</span>
+                </h2>
+                <p>de
+                    <span>{{video.ownerPseudo | limitTo:35}}</span>
+                    <span data-ng-if="video.ownerPseudo.length > 35">...</span>
+                </p>
+                <span class="view">{{video.views}} vue(s) . {{video.creationDate | date:'dd/MM/yyyy'}}</span>
+            </a>
+        </div>
+    </md-content>
+    <div data-ng-show="videosLoading">
+        <p class="videos-loading">Chargement ...</p>
+    </div>
+</div>

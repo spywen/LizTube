@@ -1,0 +1,30 @@
+<span data-ng-init="checkUserConnected()">
+<span data-ng-if="type == 'forSideBar'">
+    <span  data-ng-show="userConnected">
+        <div class="colored"></div>
+        <div class="panel-header">
+            <a href="/profil" class="profile-href"><h1>{{pseudo}}</h1></a>
+        </div>
+        <div class="clear"></div>
+        <div class="panel-footer">
+            <a href="/profil" class="profile-href"><gravatar-image class="gr-img"gravatar-email="email" gravatar-size="150" gravatar-default="mm"></gravatar-image></a>
+            <md-button class="logout md-warn md-raised" data-ng-click="logOut(); close()" href="#"><i class="fa fa-sign-out"></i> Déconnexion</md-button>
+        </div>
+    </span>
+    <span data-ng-hide="userConnected">
+        <h1 class="md-toolbar-tools">Menu</h1>
+    </span>
+</span>
+<span data-ng-if="type == 'forHeaderBar'">
+    <div data-ng-show="userConnected" class="navbar-header" data-ng-href="/profil">
+        <a href="/profil" class="profile-href">
+            <h1>{{pseudo}}</h1>
+            <gravatar-image class="gr-img" gravatar-email="email" gravatar-size="150" gravatar-default="mm"></gravatar-image>
+        </a>
+    </div>
+    <div data-ng-hide="userConnected">
+        <md-button class="md-warn btn-padding" href="login"><i class="fa fa-user"></i> Connexion</md-button>
+        <md-button class="md-accent btn-padding" href="register"><i class="fa fa-user-plus"></i> Inscription</md-button>
+    </div>
+</span>
+</span>

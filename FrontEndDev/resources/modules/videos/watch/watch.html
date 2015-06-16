@@ -1,0 +1,113 @@
+<div id="watch" ng-init="getVideoDesc()" >
+    <div class="video-container">
+        <videogular vg-theme="config.theme" class="videogular-container">
+            <vg-media vg-src="config.sources"
+                      vg-tracks="config.tracks">
+            </vg-media>
+
+            <vg-controls>
+                <vg-play-pause-button></vg-play-pause-button>
+                <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+                <vg-scrub-bar>
+                    <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                </vg-scrub-bar>
+                <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+                <vg-volume>
+                    <vg-mute-button></vg-mute-button>
+                    <vg-volume-bar></vg-volume-bar>
+                </vg-volume>
+                <vg-playback-button></vg-playback-button>
+                <vg-fullscreen-button></vg-fullscreen-button>
+
+            </vg-controls>
+
+            <vg-overlay-play></vg-overlay-play>
+            <vg-poster vg-url='config.plugins.poster'></vg-poster>
+        </videogular>
+
+        <div ng-switch="isEnableEditingVideo">
+            <div class="video-infos" layout="row" ng-switch-when="false" layout-wrap>
+                <h1>{{videoDesc.title}}</h1>
+                <div class="clear"></div>
+                <div flex="50">
+                    <a href="/search/{{videoDesc.ownerPseudo}}" class="owner">
+                        <gravatar-image gravatar-email="videoDesc.ownerEmail" gravatar-size="50" gravatar-default="mm"/>
+                        <span>{{videoDesc.ownerPseudo}}</span>
+                    </a>
+                </div>
+                <span flex="50"  class="nb-view">
+                    Nombre de vue(s) : {{videoDesc.views}}<br/>
+                    Date de publication : {{videoDesc.creationDate | date:'dd/MM/yyyy'}}
+                </span>
+                <div ng-if="editVideo" flex="100">
+                    <md-button   class="md-accent md-raised watch-btn" ng-click="enableEditVideo()">
+                        <i class="fa fa-pencil-square-o"></i> Modifier
+                    </md-button>
+                    <md-button ng-if="videoDesc.public || videoDesc.publicLink" class="md-accent md-raised watch-btn" ng-click="showLink($event)">
+                        <i class="fa fa-share"></i> Partager
+                    </md-button>
+                </div>
+                <div class="description" layout="row" layout-wrap>
+                    <h2>Description
+
+                        <input type="hidden" data-ng-model="urlForSharing"/>
+
+                    </h2>
+                    <p>{{videoDesc.description}}</p>
+                </div>
+            </div>
+
+            <form class="form-update" name="formUpdate" ng-switch-when="true">
+                <div class="video-infos" layout="row"  layout-wrap>
+                    <div class="description" layout="row" layout-wrap>
+                        <h2>Edition
+
+                        </h2>
+                        <div class="justify">
+                            <md-input-container>
+                                <label><i class="fa fa-video-camera"></i> Titre</label>
+                                <input type="text" name="title" required="required" md-maxlength="300" ng-model="videoDesc.title"/>
+                                <div ng-messages="formUpdate.title.$error">
+                                    <div ng-message="required">Le titre est requis</div>
+                                    <div ng-message="md-maxlength">Le titre ne doit pas dépasser 300 caractères</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div class="justify">
+                            <md-input-container>
+                                <label><i class="fa fa-newspaper-o"></i> Description</label>
+                                <textarea ng-model="videoDesc.description" name="description" required="required" columns="1" md-maxlength="1000"></textarea>
+                                <div ng-messages="formUpdate.description.$error">
+                                    <div ng-message="required">La description est requise</div>
+                                    <div ng-message="md-maxlength">La description ne doit pas dépasser 1000 caractères</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div>
+                            <div layout="column" layout-align="center center">
+                                <h4 class="no-margin">Sélectionner le niveau de confidentialité :</h4>
+                                <md-radio-group class="no-margin md-primary" name="confidentiality" ng-model="videoDesc.confidentiality" required="required" aria-label="confidentiality"  layout="row" layout-align="center center">
+                                    <md-radio-button value="1">Publique</md-radio-button>
+                                    <md-radio-button value="0">Privé</md-radio-button>
+                                    <md-radio-button value="2">
+                                        Disponible uniquement par lien
+                                        <md-tooltip>
+                                            Seules les personnes disposant<br/>du lien de la vidéo pourront<br/> y accèder. Option modifiable<br/> une fois la vidéo uploadée.
+                                        </md-tooltip>
+                                    </md-radio-button>
+                                </md-radio-group>
+                            </div>
+                        </div>
+                        <p>
+                            <md-button class="md-accent md-raised showLink" ng-click="updateVideoDesc()" ng-disabled="formUpdate.$invalid">
+                                <i class="fa fa-pencil-square-o"></i> Mettre à jour
+                            </md-button>
+                        </p>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

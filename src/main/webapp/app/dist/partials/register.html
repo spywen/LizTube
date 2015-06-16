@@ -1,0 +1,94 @@
+<div id="register">
+<div>
+    <div layout="column" layout-align="center center" class="register">
+        <form class="form-register" name="formRegister">
+            <md-toolbar class="register-bar md-accent">
+                <h2 class="md-toolbar-tools">
+                    <span><img src="app/dist/img/favicon.png" width="27px"> Inscription</span>
+                </h2>
+            </md-toolbar>
+            <div class="register-content">
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        <label><i class="fa fa-user"></i> Nom</label>
+                        <input type="text" name="firstname" data-ng-model="user.firstname" data-ng-minlength="1" data-ng-maxlength="100" required/>
+                        <div data-ng-messages="formRegister.firstname.$error">
+                            <div data-ng-message="required">Le nom est requis</div>
+                            <div data-ng-message="minlength">Le nom est trop court</div>
+                            <div data-ng-message="maxlength">Le nom est trop long</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label><i class="fa fa-user"></i> Prénom</label>
+                        <input type="text" name="lastname"  data-ng-model="user.lastname" data-ng-minlength="1" data-ng-maxlength="100" required/>
+                        <div data-ng-messages="formRegister.lastname.$error">
+                            <div data-ng-message="required">Le prénom est requis</div>
+                            <div data-ng-message="minlength">Le prénom est trop court</div>
+                            <div data-ng-message="maxlength">Le prénom est trop long</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label><i class="fa fa-user"></i> Pseudo</label>
+                        <input type="text" name="pseudo" data-ng-model="user.pseudo" data-ng-minlength="3" data-ng-maxlength="50" required pseudo-validation data-ng-model-options="{ updateOn: 'blur' }"/>
+                        <div data-ng-messages="formRegister.pseudo.$error">
+                            <div data-ng-message="required">Le pseudo est requis</div>
+                            <div data-ng-message="pseudoValidation">Pseudo déjà utilisé</div>
+                            <div data-ng-message="minlength">Le pseudo est trop court</div>
+                            <div data-ng-message="maxlength">Le pseudo est trop long</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        <label><i class="fa fa-envelope"></i> Email</label>
+                        <input type="email" name="email" data-ng-model="user.email" required email-validation data-ng-model-options="{ updateOn: 'blur' }"/>
+                        <div data-ng-messages="formRegister.email.$error">
+                            <div data-ng-message="required">L'email est requis</div>
+                            <div data-ng-message="emailValidation">Email déjà utilisé</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label><i class="fa fa-calendar"></i> Date de naissance</label>
+                        <input type="date" name="date_naissance" data-ng-model="user.birthdate" date-to-timestamp>
+                        <div data-ng-messages="formRegister.date_naissance.$error">
+                            <div data-ng-message="dateToTimestamp">La date doit être inférieure à la date d'aujourd'hui</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        <label><i class="fa fa-lock"></i> Mot de passe</label>
+                        <input type="password" name="password" data-ng-model="user.password" data-ng-minlength="5" data-ng-maxlength="50" required>
+                        <div data-ng-messages="formRegister.password.$error">
+                            <div data-ng-message="required">Mot de passe requis</div>
+                            <div data-ng-message="minlength">Le mot de passe est trop court</div>
+                            <div data-ng-message="maxlength">Le mot de passe est trop long</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label><i class="fa fa-lock"></i> Confirmation mot de passe</label>
+                        <input type="password" name="password_confirm" data-ng-model="verif.password" required password-verify="user.password">
+                        <div data-ng-messages="formRegister.password_confirm.$error">
+                            <div data-ng-message="required">Mot de passe requis</div>
+                            <div data-ng-message="passwordVerify">Les mots de passe sont différents</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        Sexe
+                        <md-radio-group data-ng-model="user.isfemale" required>
+                            <md-radio-button data-ng-value="true"><i class="fa fa-female"></i> Femme</md-radio-button>
+                            <md-radio-button data-ng-value="false"><i class="fa fa-male"></i>  Homme </md-radio-button>
+                        </md-radio-group>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row" layout-align="end center" class="register-footer">
+                <md-button type="submit" data-ng-click="register()" class="md-accent md-raised margin-right" data-ng-disabled="formRegister.$invalid"><i class="fa fa-check"></i> Inscription</md-button>
+                <md-button href="/login" class="md-warn md-primary"><i class="fa fa-sign-in"></i> Connexion</md-button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
